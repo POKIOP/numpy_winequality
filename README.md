@@ -9,7 +9,6 @@ import seaborn as sns
 """Generating numpy array from csv file"""
 my_array=np.genfromtxt('winequality-red.csv',delimiter=',',dtype=float,
                        skip_header=True)
-
 """Setting print options and using ggplot map style"""
 np.set_printoptions(suppress=True)
 plt.style.use('ggplot')
@@ -50,7 +49,8 @@ for i in range(1,4):
     q_factor.append(abs(corr_quality[i,0]))
 print('Factor which affect the wine quality most=\n',
       q_name_fact[q_factor.index(max(q_factor))])
-sns.heatmap(corr_quality,annot=True,xticklabels=['wine_quality','alcohol','ph','sugar'],yticklabels=['wine_quality','alcohol','ph','sugar'])
+sns.heatmap(corr_quality,annot=True,xticklabels=['wine_quality','alcohol','ph','sugar'],
+            yticklabels=['wine_quality','alcohol','ph','sugar'])
 plt.show()
 
 """6. To find which acid affect ph level"""
